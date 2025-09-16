@@ -66,6 +66,31 @@
         .max-w-60rem {
             max-width: 60rem;
         }
+
+        /* Color Palette */
+        .color-square {
+            width: 100%;
+            height: 100px;
+            border-radius: 0.5rem;
+            border: 1px solid #E5E7EB;
+        }
+
+        .palette-emerald { background-color: #047857; }
+        .palette-purple { background-color: #6d28d9; }
+        .palette-red { background-color: #b91c1c; }
+        .palette-cyan { background-color: #0891b2; }
+
+        /* Color palette container styling */
+        .palette-container {
+            background-color: #fff;
+            color: #2a4e69;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .palette-text {
+            color: #2a4e69;
+        }
     </style>
 </head>
 <body class="color-bg-primary color-text-primary">
@@ -160,6 +185,42 @@
                             <h3 class="fs-4 fw-bold mb-2">Stay on</h3>
                             <p class="color-text-secondary">Migliora l'engagement e la fidelizzazione dei clienti con insight intelligenti.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 px-custom">
+        <div class="container mb-5 palette-container">
+            <h3 class="fs-4 fw-bold mb-4 text-center palette-text">Color Palette</h3>
+            <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center">
+                <div class="col text-center">
+                    <div class="color-square palette-emerald"></div>
+                    <div class="mt-2 text-sm palette-text">
+                        <span class="d-block fw-bold">Emerald</span>
+                        <small>#047857</small>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="color-square palette-purple"></div>
+                    <div class="mt-2 text-sm palette-text">
+                        <span class="d-block fw-bold">Purple</span>
+                        <small>#6d28d9</small>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="color-square palette-red"></div>
+                    <div class="mt-2 text-sm palette-text">
+                        <span class="d-block fw-bold">Red</span>
+                        <small>#b91c1c</small>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="color-square palette-cyan"></div>
+                    <div class="mt-2 text-sm palette-text">
+                        <span class="d-block fw-bold">Cyan</span>
+                        <small>#0891b2</small>
                     </div>
                 </div>
             </div>

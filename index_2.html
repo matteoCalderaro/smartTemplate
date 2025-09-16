@@ -66,6 +66,26 @@
                 padding-right: 4rem;
             }
         }
+
+        /* Color Palette */
+        .color-square {
+            width: 100%;
+            height: 100px;
+            border-radius: 0.5rem;
+            border: 1px solid #E5E7EB;
+        }
+
+        .palette-pastel-blue { background-color: #AEC6CF; }
+        .palette-soft-green { background-color: #77DD77; }
+        .palette-muted-pink { background-color: #FFB3BA; }
+        .palette-warm-gray { background-color: #BDB76B; }
+
+        /* Color palette container styling */
+        .palette-container {
+            background-color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 1rem;
+        }
     </style>
 </head>
 <body class="color-bg-primary color-text-primary">
@@ -166,6 +186,42 @@
                             <h3 class="fs-4 fw-bold mb-2 color-text-primary">Stay on</h3>
                             <p class="color-text-secondary">Migliora l'engagement e la fidelizzazione dei clienti con insight intelligenti.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 px-custom">
+        <div class="container mb-5 palette-container">
+            <h3 class="fs-4 fw-bold mb-4 text-center">Color Palette</h3>
+            <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center">
+                <div class="col text-center">
+                    <div class="color-square palette-pastel-blue"></div>
+                    <div class="mt-2 text-sm color-text-secondary">
+                        <span class="d-block fw-bold">Pastel Blue</span>
+                        <small>#AEC6CF</small>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="color-square palette-soft-green"></div>
+                    <div class="mt-2 text-sm color-text-secondary">
+                        <span class="d-block fw-bold">Soft Green</span>
+                        <small>#77DD77</small>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="color-square palette-muted-pink"></div>
+                    <div class="mt-2 text-sm color-text-secondary">
+                        <span class="d-block fw-bold">Muted Pink</span>
+                        <small>#FFB3BA</small>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="color-square palette-warm-gray"></div>
+                    <div class="mt-2 text-sm color-text-secondary">
+                        <span class="d-block fw-bold">Warm Gray</span>
+                        <small>#BDB76B</small>
                     </div>
                 </div>
             </div>
