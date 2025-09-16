@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiSmart - Intelligent Solutions for Business</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F4EE; /* A light, off-white from the logo background */
+            color: #183a49; /* A dark charcoal for text, all updated to this color */
+        }
+
+        .cta-btn {
+            background-color: #2a4e69; /* Brighter blue for CTA from logo */
+            color: #FFFFFF; /* White for better contrast */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #3e6280;
+            box-shadow: 0 0 15px rgba(42, 78, 105, 0.6);
+        }
+
+        .card-base {
+            background: #FFFFFF; /* White */
+            border: 1px solid #E5E7EB;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-base:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            color: #2a4e69; /* Brighter blue from CTA button */
+            font-size: 3.5rem;
+        }
+        
+        .hero-section {
+            min-height: 90vh;
+        }
+
+        /* Custom spacing to replicate Tailwind's px-8 md:px-16 */
+        .px-custom {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        @media (min-width: 768px) {
+            .px-custom {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#F8F4EE] text-[#183a49]">
+
+    <!-- Modal for CTA -->
+    <div id="cta-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-white p-4 rounded-4 shadow-lg text-center text-[#183a49]">
+                <div class="modal-body">
+                    <h3 class="modal-title fs-4 fw-bold mb-3">Start Your Free Trial!</h3>
+                    <p class="text-secondary mb-4">Thank you for your interest! We'll get in touch with you shortly.</p>
+                    <button type="button" class="btn btn-warning w-100 py-3 rounded-4 fw-semibold text-dark" style="background-color: #2a4e69; border-color: #2a4e69; color: #ffffff;" data-bs-dismiss="modal">Got it!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar sticky-top bg-transparent py-4 px-custom">
+        <a class="navbar-brand d-flex align-items-center me-auto" href="#">
+            <img src="logo_trasparente.png" alt="BiSmart Logo" height="70px">
+            <h1 class="ms-3 fs-3 fw-bold tracking-tight" style="color: #183a49;">bismart.ai</h1>
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section d-flex flex-column justify-content-center align-items-center text-center p-4 position-relative overflow-hidden">
+        <div class="position-relative z-10 container">
+            <h1 class="display-3 fw-bolder tracking-tight mb-4" style="color: #2a4e69;">
+                The Future of Business, Powered by AI.
+            </h1>
+            <p class="lead text-gray-600 mx-auto mb-5" style="max-width: 60rem;">
+                Harness the power of artificial intelligence with a unified platform. Our innovative applications are designed to forecast, analyze, and automate your operations for unparalleled growth.
+            </p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                <button type="button" class="cta-btn fw-semibold py-3 px-5 rounded-4 shadow-lg hover:shadow-xl transition-all duration-300" data-bs-toggle="modal" data-bs-target="#cta-modal">
+                    Discover BiSmart
+                </button>
+                <button class="btn btn-outline-secondary fw-semibold py-3 px-5 rounded-4 transition duration-300" style="color: #183a49; border-color: #183a49;">
+                    Request a Demo
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Seven Apps Showcase -->
+    <section class="py-5 px-custom">
+        <div class="container text-center mb-5">
+            <h2 class="display-4 fw-bolder mb-3" style="color: #183a49;">A Suite of Powerful Applications</h2>
+            <p class="lead text-gray-600 mx-auto" style="max-width: 60rem;">
+                No more siloed data. Our 7 applications are designed to integrate seamlessly, providing a single source of truth for your business.
+            </p>
+        </div>
+        
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <!-- App Cards -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
+                        <div class="card-body">
+                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
+                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Smart Pricing</h3>
+                            <p class="text-secondary">Provides dynamic pricing forecasts and recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
+                        <div class="card-body">
+                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
+                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Sales Predict</h3>
+                            <p class="text-secondary">Forecast future sales with high accuracy using historical data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
+                        <div class="card-body">
+                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
+                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Sentiment</h3>
+                            <p class="text-secondary">Analyzes customer sentiment in real-time across the web.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
+                        <div class="card-body">
+                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
+                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Scraping</h3>
+                            <p class="text-secondary">Automates data extraction from online sources to fuel your insights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
+                        <div class="card-body">
+                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
+                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Voice to Insights</h3>
+                            <p class="text-secondary">Transcribes and analyzes voice messages for actionable data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
+                        <div class="card-body">
+                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
+                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">WhatsApp Automation</h3>
+                            <p class="text-secondary">Automates business workflows and customer communication via WhatsApp.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-12 col-lg-4">
+                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
+                        <div class="card-body">
+                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
+                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Stay on</h3>
+                            <p class="text-secondary">Enhance customer engagement and retention with smart insights.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 text-center text-sm text-gray-500">
+        <p>&copy; 2024 BiSmart. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
