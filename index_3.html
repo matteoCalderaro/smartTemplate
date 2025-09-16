@@ -1,192 +1,233 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BiSmart - Intelligent Solutions for Business</title>
-    <!-- Bootstrap CSS CDN -->
+    <title>BiSmart - Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8F4EE; /* A light, off-white from the logo background */
-            color: #183a49; /* A dark charcoal for text, all updated to this color */
+            background-color: #F8F4EE; /* Lighter background for the main page */
+            color: #2a4e69; /* Dark text for light background */
         }
 
-        .cta-btn {
-            background-color: #2a4e69; /* Brighter blue for CTA from logo */
-            color: #FFFFFF; /* White for better contrast */
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        /* Sidebar Styling */
+        .sidebar {
+            width: 280px;
+            background-color: #080c1d; /* Kept dark for contrast */
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #2D3748;
+            transition: transform 0.3s ease;
         }
 
-        .cta-btn:hover {
-            background-color: #3e6280;
-            box-shadow: 0 0 15px rgba(42, 78, 105, 0.6);
+        .sidebar a {
+            color: #94A3B8;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .card-base {
-            background: #FFFFFF; /* White */
-            border: 1px solid #E5E7EB;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .sidebar a:hover {
+            background-color: #1a223a;
+            color: #E2E8F0;
         }
 
-        .card-base:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            color: #2a4e69; /* Brighter blue from CTA button */
-            font-size: 3.5rem;
+        .sidebar a.active {
+            background-color: #C59247;
+            color: #0d1226;
+            font-weight: 600;
         }
         
-        .hero-section {
-            min-height: 90vh;
+        /* Main Content Styling */
+        .main-content {
+            margin-left: 280px;
+            padding: 1.5rem;
         }
 
-        /* Custom spacing to replicate Tailwind's px-8 md:px-16 */
-        .px-custom {
-            padding-left: 2rem;
-            padding-right: 2rem;
+        /* Navbar Styling */
+        .navbar {
+            background-color: #E5E7EB; /* Light navbar for contrast with the sidebar */
+            border-bottom: 1px solid #C59247;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 1.5rem;
+            color: #2a4e69;
         }
-        @media (min-width: 768px) {
-            .px-custom {
-                padding-left: 4rem;
-                padding-right: 4rem;
-            }
+        
+        .navbar .navbar-brand {
+            color: #2a4e69;
+        }
+
+        /* Chart card styling */
+        .chart-card {
+            background-color: #fff;
+            color: #2a4e69;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Chart colors from the palette */
+        .color-emerald { background-color: #047857; }
+        .color-purple { background-color: #6d28d9; }
+        .color-red { background-color: #b91c1c; }
+        .color-cyan { background-color: #0891b2; }
+
+        /* Simple chart examples using flexbox */
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 1rem;
+            height: 200px;
+            border-bottom: 2px solid #E5E7EB;
+        }
+        .bar-chart .bar {
+            width: 25%;
+            transition: height 0.5s ease;
+            position: relative;
+        }
+        .bar-chart .label {
+            position: absolute;
+            bottom: -25px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* Simple pie chart with a small hack for CSS-only display */
+        .pie-chart {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #047857 0%, #047857 30%, 
+                #6d28d9 30%, #6d28d9 60%, 
+                #b91c1c 60%, #b91c1c 80%,
+                #0891b2 80%, #0891b2 100%
+            );
+            margin: 0 auto;
         }
     </style>
 </head>
-<body class="bg-[#F8F4EE] text-[#183a49]">
+<body>
 
-    <!-- Modal for CTA -->
-    <div id="cta-modal" class="modal fade" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-white p-4 rounded-4 shadow-lg text-center text-[#183a49]">
-                <div class="modal-body">
-                    <h3 class="modal-title fs-4 fw-bold mb-3">Start Your Free Trial!</h3>
-                    <p class="text-secondary mb-4">Thank you for your interest! We'll get in touch with you shortly.</p>
-                    <button type="button" class="btn btn-warning w-100 py-3 rounded-4 fw-semibold text-dark" style="background-color: #2a4e69; border-color: #2a4e69; color: #ffffff;" data-bs-dismiss="modal">Got it!</button>
-                </div>
+    <nav class="navbar">
+        <div class="container-fluid px-0">
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+                <img src="logo_trasparente.png" alt="BiSmart Logo" height="50px">
+                <span class="ms-2 fs-5">Dashboard</span>
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <a href="#" class="color-text-gold">
+                    <i class="bi bi-bell-fill fs-5"></i>
+                </a>
+                <a href="#" class="color-text-gold">
+                    <i class="bi bi-person-circle fs-5"></i>
+                </a>
             </div>
         </div>
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar sticky-top bg-transparent py-4 px-custom">
-        <a class="navbar-brand d-flex align-items-center me-auto" href="#">
-            <img src="logo_trasparente.png" alt="BiSmart Logo" height="70px">
-            <h1 class="ms-3 fs-3 fw-bold tracking-tight" style="color: #183a49;">bismart.ai</h1>
-        </a>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-section d-flex flex-column justify-content-center align-items-center text-center p-4 position-relative overflow-hidden">
-        <div class="position-relative z-10 container">
-            <h1 class="display-3 fw-bolder tracking-tight mb-4" style="color: #2a4e69;">
-                The Future of Business, Powered by AI.
-            </h1>
-            <p class="lead text-gray-600 mx-auto mb-5" style="max-width: 60rem;">
-                Harness the power of artificial intelligence with a unified platform. Our innovative applications are designed to forecast, analyze, and automate your operations for unparalleled growth.
-            </p>
-            <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
-                <button type="button" class="cta-btn fw-semibold py-3 px-5 rounded-4 shadow-lg hover:shadow-xl transition-all duration-300" data-bs-toggle="modal" data-bs-target="#cta-modal">
-                    Discover BiSmart
-                </button>
-                <button class="btn btn-outline-secondary fw-semibold py-3 px-5 rounded-4 transition duration-300" style="color: #183a49; border-color: #183a49;">
-                    Request a Demo
-                </button>
-            </div>
-        </div>
-    </header>
+    <aside class="sidebar d-none d-lg-flex">
+        <a class="d-flex align-items-center text-decoration-none fw-bold mb-4" href="#">
+            <img src="logo_trasparente.png" alt="BiSmart Logo" height="60px">
+            <h1 class="ms-3 fs-4 tracking-tight" style="color:#C59247;">bismart.ai</h1>
+        </a>
+        <nav class="nav flex-column flex-grow-1">
+            <a class="nav-link d-flex align-items-center gap-2 active" href="#">
+                <i class="bi bi-currency-euro"></i>
+                <span>Smart Pricing</span>
+            </a>
+            <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-graph-up-arrow"></i>
+                <span>Sales Predict</span>
+            </a>
+            <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-chat-heart-fill"></i>
+                <span>Sentiment</span>
+            </a>
+            <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-cloud-download"></i>
+                <span>Scraping</span>
+            </a>
+            <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-mic-fill"></i>
+                <span>Voice to Insights</span>
+            </a>
+            <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-whatsapp"></i>
+                <span>WhatsApp Automation</span>
+            </a>
+            <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-person-check-fill"></i>
+                <span>Stay on</span>
+            </a>
+        </nav>
+    </aside>
 
-    <!-- The Seven Apps Showcase -->
-    <section class="py-5 px-custom">
-        <div class="container text-center mb-5">
-            <h2 class="display-4 fw-bolder mb-3" style="color: #183a49;">A Suite of Powerful Applications</h2>
-            <p class="lead text-gray-600 mx-auto" style="max-width: 60rem;">
-                No more siloed data. Our 7 applications are designed to integrate seamlessly, providing a single source of truth for your business.
-            </p>
-        </div>
-        
-        <div class="container">
-            <div class="row g-4 justify-content-center">
-                <!-- App Cards -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
-                        <div class="card-body">
-                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
-                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Smart Pricing</h3>
-                            <p class="text-secondary">Provides dynamic pricing forecasts and recommendations.</p>
+    <main class="main-content">
+        <div class="container-fluid">
+            <h2 class="fs-1 fw-bold mb-4">Dashboard</h2>
+            <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                    <div class="chart-card">
+                        <h4 class="mb-4 fw-semibold">Proiezione Vendite Settimanali</h4>
+                        <div class="bar-chart">
+                            <div class="bar color-emerald" style="height: 60%;">
+                                <span class="label mt-1">Sett. 1</span>
+                            </div>
+                            <div class="bar color-purple" style="height: 85%;">
+                                <span class="label mt-1">Sett. 2</span>
+                            </div>
+                            <div class="bar color-red" style="height: 45%;">
+                                <span class="label mt-1">Sett. 3</span>
+                            </div>
+                            <div class="bar color-cyan" style="height: 95%;">
+                                <span class="label mt-1">Sett. 4</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
-                        <div class="card-body">
-                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
-                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Sales Predict</h3>
-                            <p class="text-secondary">Forecast future sales with high accuracy using historical data.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
-                        <div class="card-body">
-                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
-                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Sentiment</h3>
-                            <p class="text-secondary">Analyzes customer sentiment in real-time across the web.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
-                        <div class="card-body">
-                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
-                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Scraping</h3>
-                            <p class="text-secondary">Automates data extraction from online sources to fuel your insights.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
-                        <div class="card-body">
-                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
-                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Voice to Insights</h3>
-                            <p class="text-secondary">Transcribes and analyzes voice messages for actionable data.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
-                        <div class="card-body">
-                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
-                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">WhatsApp Automation</h3>
-                            <p class="text-secondary">Automates business workflows and customer communication via WhatsApp.</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-12 col-lg-4">
-                    <div class="card-base p-5 rounded-5 text-center h-100 d-flex flex-column justify-content-between">
-                        <div class="card-body">
-                            <span class="feature-icon mb-4"><i class="bi bi-gear-fill"></i></span>
-                            <h3 class="fs-4 fw-bold mb-2" style="color: #183a49;">Stay on</h3>
-                            <p class="text-secondary">Enhance customer engagement and retention with smart insights.</p>
+                <div class="col-12 col-lg-6">
+                    <div class="chart-card text-center">
+                        <h4 class="mb-4 fw-semibold">Distribuzione Clienti</h4>
+                        <div class="pie-chart mb-4"></div>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="rounded-circle color-emerald" style="width: 12px; height: 12px;"></div>
+                                <span class="small">Nuovi (30%)</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="rounded-circle color-purple" style="width: 12px; height: 12px;"></div>
+                                <span class="small">Esistenti (30%)</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="rounded-circle color-red" style="width: 12px; height: 12px;"></div>
+                                <span class="small">Dormienti (20%)</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="rounded-circle color-cyan" style="width: 12px; height: 12px;"></div>
+                                <span class="small">VIP (20%)</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <footer class="py-4 text-center text-sm text-gray-500">
-        <p>&copy; 2024 BiSmart. All rights reserved.</p>
-    </footer>
-
-    <!-- Bootstrap JS with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
