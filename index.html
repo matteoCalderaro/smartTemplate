@@ -11,39 +11,41 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        
-        /* --- Styles from index.html --- */
-        .color-bg-primary { background-color: #0d1226; }
-        .color-bg-card { background: #12182c; }
-        .color-border-card { border: 1px solid #2D3748; }
-        .color-text-primary { color: #E2E8F0; }
-        .color-text-secondary { color: #94A3B8; }
-        .color-text-white { color: #ffffff; }
+
+        /* --- Styles from index_2.html (Light Palette) --- */
+        .color-bg-primary { background-color: #F8F9FA; }
+        .color-bg-card { background: #FFFFFF; }
+        .color-border-card { border: 1px solid #E5E7EB; }
+        .color-text-primary { color: #2a4e69; }
+        .color-text-secondary { color: #6c757d; }
+        .color-text-white { color: #2a4e69; }
         .color-text-gold { color: #C59247; }
-        .color-text-dark-blue { color: #0d1226; }
-        .color-btn-border { border-color: #CBD5E0 !important; }
-        
+        .color-text-dark-blue { color: #2a4e69; }
+        .color-btn-border { border-color: #C59247 !important; }
+
         .cta-btn {
             background-color: #C59247;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            color: #2a4e69;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
         }
         .cta-btn:hover {
             background-color: #d19f5a;
+            color: #fff;
             box-shadow: 0 0 15px rgba(197, 146, 71, 0.6);
         }
-        
+
         .card-base {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card-base:hover {
             transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        
+
         .feature-icon {
             font-size: 3.5rem;
         }
-        
+
         .px-custom {
             padding-left: 2rem;
             padding-right: 2rem;
@@ -54,80 +56,54 @@
                 padding-right: 4rem;
             }
         }
-        
+
         .max-w-60rem {
             max-width: 60rem;
         }
-        
-        .color-square {
-            width: 100%;
-            height: 100px;
-            border-radius: 0.5rem;
-            border: 1px solid #E5E7EB;
-        }
-        .palette-emerald { background-color: #047857; }
-        .palette-purple { background-color: #6d28d9; }
-        .palette-red { background-color: #b91c1c; }
-        .palette-cyan { background-color: #0891b2; }
-        
-        .palette-container {
-            background-color: #F8F4EE;
-            padding: 2rem;
-            border-radius: 1rem;
-        }
-        .palette-text {
-            color: #2a4e69;
-        }
-        
-        /* --- Styles from index_3.html --- */
+
+        /* --- Styles for the Dashboard section (from index_2.html) --- */
         .container-index-3 {
-            background-color: #F0F4F8;
+            background-color: #F8F9FA;
             color: #2a4e69;
             height: 1000px;
         }
         .sidebar {
             width: 280px;
-            background-color: #080c1d;
+            background-color: #fff;
             padding: 1.5rem;
-            border-right: 1px solid #2D3748;
+            border-right: 1px solid #E5E7EB;
         }
         .sidebar a {
-            color: #ffffff; /* Changed from #94A3B8 */
+            color: #6c757d;
             padding: 0.75rem 1rem;
             margin-bottom: 0.5rem;
             border-radius: 0.5rem;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .sidebar i {
-            color: #C59247;
-        }
-        
         .sidebar a:hover {
-            background-color: #1a223a;
-            color: #E2E8F0;
+            background-color: #f0f2f5;
+            color: #2a4e69;
         }
-        
         .sidebar a.active {
             background-color: #C59247;
-            color: #0d1226;
+            color: #fff;
             font-weight: 600;
         }
-        .sidebar a.active i {
-            color:#0d1226;
-        }
-        
         .main-content {
             flex-grow: 1;
             padding: 1.5rem;
         }
-        .navbar-light {
-            background-color: #E5E7EB;
+        .navbar-blue {
+            background-color: #2a4e69;
             border-bottom: 1px solid #C59247;
             padding: 1rem 1.5rem;
-            color: #2a4e69;
+            color: #ffff;
         }
-        .navbar-light .navbar-brand {
-            color: #2a4e69;
+        .navbar-blue .navbar-brand {
+            color: #ffff;
+        }
+        .navbar-blue i{
+            color: #ffff;
         }
         .chart-card {
             background-color: #fff;
@@ -138,10 +114,11 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             height: 100%;
         }
-        .color-emerald { background-color: #047857; }
-        .color-purple { background-color: #6d28d9; }
-        .color-red { background-color: #b91c1c; }
-        .color-cyan { background-color: #0891b2; }
+        /* Color classes from index_2.html palette */
+        .color-emerald { background-color: #77DD77; }
+        .color-purple { background-color: #AEC6CF; }
+        .color-red { background-color: #FFB3BA; }
+        .color-cyan { background-color: #BDB76B; }
         .bar-chart {
             display: flex;
             align-items: flex-end;
@@ -166,21 +143,21 @@
             height: 200px;
             border-radius: 50%;
             background: conic-gradient(
-            #047857 0%, #047857 30%, 
-            #6d28d9 30%, #6d28d9 60%, 
-            #b91c1c 60%, #b91c1c 80%,
-            #0891b2 80%, #0891b2 100%
+                #77DD77 0%, #77DD77 30%,
+                #AEC6CF 30%, #AEC6CF 60%,
+                #FFB3BA 60%, #FFB3BA 80%,
+                #BDB76B 80%, #BDB76B 100%
             );
             margin: 0 auto;
         }
     </style>
 </head>
 <body class="color-bg-primary color-text-primary">
-    
+
     <nav class="navbar bg-transparent py-4 px-custom">
         <a class="navbar-brand d-flex align-items-center me-auto" href="#">
             <img src="logo_trasparente.png" alt="BiSmart Logo" height="70px">
-            <h1 class="ms-3 fs-3 fw-bold tracking-tight color-text-white">bismart.ai</h1>
+            <h1 class="ms-3 fs-3 fw-bold tracking-tight color-text-primary">bismart.ai</h1>
         </a>
         <div class="d-flex gap-3">
             <a href="index.html" class="btn btn-outline-secondary color-text-primary fw-semibold rounded-4 transition duration-300 color-btn-border">Demo 1</a>
@@ -270,111 +247,7 @@
             </div>
         </div>
     </section>
-    
-    <div class="container-index-3 d-flex flex-column">
-        <nav class="navbar-light">
-            <div class="container-fluid px-0 d-flex justify-content-between">
-                <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
-                    <img src="logo_trasparente.png" alt="BiSmart Logo" height="50px">
-                    <span class="ms-2 fs-5">bismart.ai</span>
-                </a>
-                <div class="d-flex align-items-center gap-3">
-                    <a href="#" style="color: #080c1d;">
-                        <i class="bi bi-bell-fill fs-5"></i>
-                    </a>
-                    <a href="#" style="color: #080c1d;">
-                        <i class="bi bi-person-circle fs-5"></i>
-                    </a>
-                </div>
-            </div>
-        </nav>
-        <div class="d-flex flex-row flex-grow-1">
-            <aside class="sidebar">
-                
-                <nav class="nav flex-column flex-grow-1">
-                    <a class="nav-link d-flex align-items-center gap-2 active" href="#">
-                        <i class="bi bi-currency-euro"></i>
-                        <span>Smart Pricing</span>
-                    </a>
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <span>Sales Predict</span>
-                    </a>
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
-                        <i class="bi bi-chat-heart-fill"></i>
-                        <span>Sentiment</span>
-                    </a>
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
-                        <i class="bi bi-cloud-download"></i>
-                        <span>Scraping</span>
-                    </a>
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
-                        <i class="bi bi-mic-fill"></i>
-                        <span>Voice to Insights</span>
-                    </a>
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
-                        <i class="bi bi-whatsapp"></i>
-                        <span>WhatsApp Automation</span>
-                    </a>
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
-                        <i class="bi bi-person-check-fill"></i>
-                        <span>Stay on</span>
-                    </a>
-                </nav>
-            </aside>
-            <main class="main-content">
-                <div class="container-fluid">
-                    <h2 class="fs-1 fw-bold mb-4">Dashboard</h2>
-                    <div class="row g-4">
-                        <div class="col-12 col-lg-6">
-                            <div class="chart-card">
-                                <h4 class="mb-4 fw-semibold">Proiezione Vendite Settimanali</h4>
-                                <div class="bar-chart">
-                                    <div class="bar color-emerald" style="height: 60%;">
-                                        <span class="label mt-1">Sett. 1</span>
-                                    </div>
-                                    <div class="bar color-purple" style="height: 85%;">
-                                        <span class="label mt-1">Sett. 2</span>
-                                    </div>
-                                    <div class="bar color-red" style="height: 45%;">
-                                        <span class="label mt-1">Sett. 3</span>
-                                    </div>
-                                    <div class="bar color-cyan" style="height: 95%;">
-                                        <span class="label mt-1">Sett. 4</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="chart-card text-center">
-                                <h4 class="mb-4 fw-semibold">Distribuzione Clienti</h4>
-                                <div class="pie-chart mb-4"></div>
-                                <div class="d-flex flex-wrap justify-content-center gap-3">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <div class="rounded-circle color-emerald" style="width: 12px; height: 12px;"></div>
-                                        <span class="small">Nuovi (30%)</span>
-                                    </div>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <div class="rounded-circle color-purple" style="width: 12px; height: 12px;"></div>
-                                        <span class="small">Esistenti (30%)</span>
-                                    </div>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <div class="rounded-circle color-red" style="width: 12px; height: 12px;"></div>
-                                        <span class="small">Dormienti (20%)</span>
-                                    </div>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <div class="rounded-circle color-cyan" style="width: 12px; height: 12px;"></div>
-                                        <span class="small">VIP (20%)</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
