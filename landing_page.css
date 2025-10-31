@@ -1,0 +1,163 @@
+/* Import existing styles */
+@import url('style.css');
+
+/* Sticky Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it's above other content */
+    background-color: #F8F9FA !important; /* Explicitly set opaque background */
+    transition: all 0.3s ease-in-out; /* Smooth transition for changes */
+    padding-top: 1rem; /* Reduced vertical padding */
+    padding-bottom: 1rem; /* Reduced vertical padding */
+}
+
+.navbar-brand img {
+    transition: height 0.3s ease-in-out; /* Smooth transition for logo size */
+}
+
+.navbar.navbar-scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow when scrolled */
+    padding-top: 0.5rem; /* Even less padding when scrolled */
+    padding-bottom: 0.5rem; /* Even less padding when scrolled */
+    background-color: #F8F9FA !important; /* Explicitly set opaque background when scrolled */
+}
+
+.navbar.navbar-scrolled .navbar-brand img {
+    height: 40px; /* Further reduced height for logo when scrolled */
+}
+
+.navbar .d-flex.gap-3 {
+    align-items: center; /* Align menu items and button vertically */
+}
+
+.navbar-brand h1 {
+    margin-bottom: 0; /* Remove default bottom margin from h1 */
+}
+
+/* Sticky Hero & Fade on Scroll */
+.hero-section {
+    position: sticky;
+    top: 0;
+    height: 100vh; /* Make hero take full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-primary); /* Ensure it has a background */
+    overflow: hidden; /* Hide overflowing side images */
+}
+
+.hero-section .container {
+    position: relative; /* New: Make container relative for absolute positioning of icons */
+    height: 100%; /* Allow container to take full height of hero */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-side-image {
+    position: absolute;
+    height: auto; /* Allow image to maintain its aspect ratio */
+    /* width: 40%; */ /* Removed width, let icon font-size define size */
+    z-index: 0; /* Behind main content */
+    /* filter: blur(2px); */ /* Removed blur */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-side-image-left {
+    left: -1%; /* Position relative to container */
+    bottom: 12%; /* Position at bottom */
+}
+
+.hero-side-image-right {
+    right: -1%; /* Position relative to container */
+    top: 2%; /* Position at top */
+}
+
+.hero-side-image img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+.hero-icon-size {
+    font-size: 10rem; /* Much larger icon size */
+    color: var(--color-text-gold); /* Use gold color */
+    /* opacity: 0.4; */ /* Removed opacity */
+}
+
+.main-content {
+    position: relative;
+    background-color: var(--color-bg-primary); /* Ensure it has a background */
+}
+
+/* Card hover effect */
+.card-base {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-base:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Custom button style for primary CTA */
+.btn-primary.color-bg-primary-btn {
+    background-color: #f7c657; /* gold color from your palette */
+    color: var(--color-bg-primary);
+    border: none;
+}
+
+.btn-primary.color-bg-primary-btn:hover {
+    background-color: #f8d27c;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+/* Video Component Styles */
+.video-display-area {
+    width: 100%;
+    max-width: 900px; /* Increased max-width */
+    margin: 0 auto; /* Center the container */
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.video-content {
+    display: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.video-content.active {
+    display: block;
+}
+
+.video-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the area */
+}
+
+.tab-button {
+    border-color: var(--color-border-card);
+    color: var(--color-text-secondary);
+    transition: all 0.3s ease;
+}
+
+.tab-button.active,
+.tab-button:hover {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+}
