@@ -1,0 +1,105 @@
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Styles from index_2.html (Light Palette) --- */
+        .color-bg-primary { background-color: #F8F9FA; }
+        .color-bg-card { background: #FFFFFF; }
+        .color-border-card { border: 1px solid #E5E7EB; }
+        .color-text-primary { color: #2a4e69; }
+        .color-text-secondary { color: #6c757d; }
+        .color-text-white { color: #2a4e69; }
+        .color-text-gold { color: #C59247; }
+        .color-text-dark-blue { color: #2a4e69; }
+        .color-btn-border { border-color: #C59247 !important; }
+
+        .cta-btn {
+            background-color: #C59247;
+            color: #2a4e69;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        }
+        .cta-btn:hover {
+            background-color: #d19f5a;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(197, 146, 71, 0.6);
+        }
+
+        .card-base {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-base:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+        }
+
+        .px-custom {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        @media (min-width: 768px) {
+            .px-custom {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
+
+        .max-w-60rem {
+            max-width: 60rem;
+        }
+
+        .footer {
+            border-top: 1px solid #E5E7EB;
+            margin-top: auto; /* This pushes the footer to the bottom */
+        }
+
+        .social-icon i {
+            font-size: 1.5rem;
+            color: #6c757d;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover i {
+            color: #C59247;
+        }
+
+        /* --- Form Styles --- */
+        .form-step {
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .list-group-item {
+            background-color: #F8F9FA;
+            border-color: #E5E7EB;
+            color: #2a4e69;
+        }
+
+        .form-control {
+            background-color: #F8F9FA;
+            border-color: #E5E7EB;
+            color: #2a4e69;
+        }
+
+        .form-control:focus {
+            background-color: #fff;
+            border-color: #C59247;
+            box-shadow: 0 0 0 0.25rem rgba(197, 146, 71, 0.25);
+            color: #2a4e69;
+        }
+
+        /* Specific styles for demo form list items */
+        .form-app-selection .list-group-item {
+            background-color: transparent;
+            border: none;
+        }
