@@ -54,5 +54,15 @@ document.addEventListener('DOMContentLoaded', function () {
         showStep(currentStep);
     });
 
+    // Pre-select app from URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const app = urlParams.get('app');
+    if (app) {
+        const checkbox = document.querySelector(`#step-1 input[value="${app}"]`);
+        if (checkbox) {
+            checkbox.checked = true;
+        }
+    }
+
     showStep(currentStep);
 });
