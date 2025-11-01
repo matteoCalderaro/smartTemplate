@@ -1,12 +1,12 @@
 /* Import existing styles */
-@import url('style.css');
+/* @import url('style.css'); */
 
 /* Sticky Navbar */
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1000; /* Ensure it's above other content */
-    background-color: #F8F9FA !important; /* Explicitly set opaque background */
+    background-color: var(--bismart-blue) !important;
     transition: all 0.3s ease-in-out; /* Smooth transition for changes */
     padding-top: 1rem; /* Reduced vertical padding */
     padding-bottom: 1rem; /* Reduced vertical padding */
@@ -30,17 +30,17 @@
 .navbar-brand h1 {
     margin-bottom: 0; /* Remove default bottom margin from h1 */
 }
+.page-content-wrapper{
+    background-color: var(--bismart-blue);
+}
 
 /* Sticky Hero & Fade on Scroll */
 .hero-section {
     position: sticky;
     top: 0;
-    height: calc(100vh - 200px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-bg-primary); /* Ensure it has a background */
+    height: calc(100vh - 92px);
     overflow: hidden; /* Hide overflowing side images */
+    /* background-color: #57574c; */
 }
 
 .hero-section .container {
@@ -72,7 +72,7 @@
     aspect-ratio: 2;
 }
 .pearl {
-    background-color: red;
+    background: var(--bismart-gold-gradient);
     width: 100%;
     height: 100%;
 }
