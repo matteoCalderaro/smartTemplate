@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.scrollTo(0, 0); // Reset scroll position on load/refresh
 
+    // Constants for animation and scroll behavior
+    const FADE_SPEED = 1.5;
+    const MAX_MOVE_AMOUNT = 300;
+    const SCROLL_THRESHOLD = 50;
+
     // Tab switching logic
     const tabButtons = document.querySelectorAll('.tab-button');
     const videoContents = document.querySelectorAll('.video-content');
@@ -43,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             const scrollPosition = window.scrollY;
             const heroHeight = heroSection.offsetHeight;
-            const fadeSpeed = 1.5; // Adjust this value to change the fade speed
-            let opacity = 1 - (scrollPosition / (heroHeight / fadeSpeed));
+
+            let opacity = 1 - (scrollPosition / (heroHeight / FADE_SPEED));
 
             if (opacity < 0) {
                 opacity = 0;
@@ -57,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Side images animation logic (move outwards)
             if (heroSideImageLeft && heroSideImageRight) {
-                const maxMove = 300; // Max pixels to move outwards (increased for more pronounced movement)
-                let moveAmount = Math.min(scrollPosition, heroHeight) / (heroHeight / maxMove);
+
+                let moveAmount = Math.min(scrollPosition, heroHeight) / (heroHeight / MAX_MOVE_AMOUNT);
 
                 // Move outwards as content scrolls up
                 heroSideImageLeft.style.transform = `translateX(${-moveAmount}px)`;
@@ -69,11 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sticky navbar logic
     const navbar = document.querySelector('.navbar');
-    const scrollThreshold = 50; // Pixels scrolled before navbar changes
+
 
     if (navbar) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > scrollThreshold) {
+            if (window.scrollY > SCROLL_THRESHOLD) {
                 navbar.classList.add('navbar-scrolled');
             } else {
                 navbar.classList.remove('navbar-scrolled');
