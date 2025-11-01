@@ -2,6 +2,7 @@
     --bismart-blue: #010336;
     --bismart-gold: #c59247;
     --bismart-gold-gradient:  linear-gradient(45deg, #c59247, #ffffff);
+    --bismart-gold-gradient-to-bottom:  linear-gradient(to bottom, #c59247, #ffffff);
     --bismart-gold-light:  #f7c657;
     
 }
@@ -14,7 +15,7 @@ body {
 
 
 /* --- Styles from index_2.html (Light Palette) --- */
-.color-bg-primary { background-color: #F8F9FA; }
+.color-bg-primary { background-color: #FFFFFF; }
 .color-bg-card { background: #FFFFFF; }
 .color-border-card { border: 1px solid #E5E7EB; }
 .color-text-primary { color: var(--bismart-blue); }
@@ -34,6 +35,81 @@ body {
     background-color: #d19f5a;
     color: #fff;
     box-shadow: 0 0 15px rgba(197, 146, 71, 0.6);
+}
+
+/* .btn-hero-primary {
+    background: var(--bismart-gold-gradient-to-bottom); 
+    color: var(--bismart-blue); 
+    border: 2px solid var(--bismart-gold); 
+    transition: all 0.6s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
+}
+
+.btn-hero-primary:hover {
+    background: white;
+    border-color: var(--bismart-gold); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    transform: translateY(0);
+} */
+
+/* 1. Stile Base del Bottone (Contenitore) */
+.btn-hero-primary {
+    /* Colore finale (di hover) come background principale */
+    background: white; 
+    color: var(--bismart-blue);
+    border: 2px solid var(--bismart-gold);
+    
+    /* Durata della transizione per tutte le proprietà animabili (border, shadow, transform) */
+    transition: all 0.6s ease;
+    
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    position: relative; 
+    overflow: hidden; 
+}
+
+/* 2. Pseudo-elemento (Overlay Gradiente) */
+.btn-hero-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente iniziale da far sparire */
+    background: var(--bismart-gold-gradient-to-bottom); 
+    
+    z-index: 2; /* Sotto il contenuto */
+    /* Transizione solo sull'opacità per l'effetto smooth */
+    transition: opacity 0.6s ease; 
+}
+
+/* 3. Contenuto del Bottone (Per Visibilità del Testo) */
+.btn-hero-primary .btn-content {
+    /* Forziamo il testo ad essere sopra l'overlay */
+    position: relative;
+    z-index: 3; 
+}
+
+/* 4. Stato Hover (Contenitore) */
+.btn-hero-primary:hover {
+    /* Queste proprietà DEVONO essere presenti per la transizione fluida */
+    
+    /* Il colore/gradiente dello sfondo è gestito dalla scomparsa di ::before */
+    color: white;
+    
+    /* Bordo di hover */
+    border-color: var(--bismart-gold); 
+    
+    /* Ombra di hover (più leggera) */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    
+    /* Nessun sollevamento */
+    transform: translateY(0);
+}
+
+/* All'hover, l'overlay gradiente si dissolve */
+.btn-hero-primary:hover::before {
+    opacity: 0; 
 }
 
 .card-base {
@@ -57,6 +133,10 @@ body {
         padding-left: 4rem;
         padding-right: 4rem;
     }
+}
+
+.text-shadow-effect {
+    text-shadow: 0 0 10px rgba(197, 146, 71, 0.3), 0 0 20px rgba(197, 146, 71, 0.2);
 }
 
 .max-w-60rem {
