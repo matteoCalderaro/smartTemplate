@@ -87,7 +87,8 @@ body {
 .btn-hero-primary .btn-content {
     /* Forziamo il testo ad essere sopra l'overlay */
     position: relative;
-    z-index: 3; 
+    z-index: 3;
+    font-size: 1.25rem; /* Aumenta la dimensione del font */
 }
 
 /* 4. Stato Hover (Contenitore) */

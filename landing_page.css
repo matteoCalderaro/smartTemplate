@@ -8,8 +8,8 @@
     z-index: 1000; /* Ensure it's above other content */
     background-color: var(--bismart-blue) !important;
     transition: all 0.3s ease-in-out; /* Smooth transition for changes */
-    padding-top: 1rem; /* Reduced vertical padding */
-    padding-bottom: 1rem; /* Reduced vertical padding */
+    padding-top:0.5rem; /* Reduced vertical padding */
+    padding-bottom: 0.5rem; /* Reduced vertical padding */
 }
 
 .navbar-brand img {
@@ -20,7 +20,7 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow when scrolled */
     padding-top: 0.5rem; /* Even less padding when scrolled */
     padding-bottom: 0.5rem; /* Even less padding when scrolled */
-    background-color: #F8F9FA !important; /* Explicitly set opaque background when scrolled */
+    background-color: var(--bismart-blue) !important; /* Explicitly set opaque background when scrolled */
 }
 
 .navbar .d-flex.gap-3 {
