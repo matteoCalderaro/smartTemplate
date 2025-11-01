@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0); // Reset scroll position on load/refresh
+
     // Tab switching logic
     const tabButtons = document.querySelectorAll('.tab-button');
     const videoContents = document.querySelectorAll('.video-content');

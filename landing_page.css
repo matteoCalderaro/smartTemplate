@@ -65,7 +65,7 @@
 
 .hero-side-image-left {
     left: -15%; /* Position relative to container */
-    bottom: 3%; /* Position at bottom */
+    bottom: 5%; /* Position at bottom */
 }
 
 .hero-side-image-right {
@@ -153,4 +153,20 @@
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
     border-color: var(--color-text-primary);
+}
+
+@keyframes spostamentoOrizzontale {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-10px); /* Sposta a sinistra di 10px */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animated-wrapper {
+    animation: spostamentoOrizzontale 4s ease-in-out infinite alternate;
 }
