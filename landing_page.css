@@ -70,11 +70,20 @@
 .hero-side-image-left {
     left: -1%; /* Position relative to container */
     bottom: 12%; /* Position at bottom */
+    width: 10rem;                      
+   height: 10rem; 
 }
 
 .hero-side-image-right {
     right: -1%; /* Position relative to container */
     top: 2%; /* Position at top */
+    width: 10rem;
+    height: 10rem;
+    color: var(--color-text-primary);
+}
+
+.hero-side-image-right svg {
+    fill: var(--color-text-primary);
 }
 
 .hero-side-image img {
@@ -86,8 +95,8 @@
 .hero-icon-size {
     font-size: 10rem; /* Much larger icon size */
     color: var(--color-text-gold); /* Use gold color */
-    /* opacity: 0.4; */ /* Removed opacity */
 }
+
 
 .main-content {
     position: relative;
