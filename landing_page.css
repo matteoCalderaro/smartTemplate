@@ -23,10 +23,6 @@
     background-color: #F8F9FA !important; /* Explicitly set opaque background when scrolled */
 }
 
-.navbar.navbar-scrolled .navbar-brand img {
-    height: 40px; /* Further reduced height for logo when scrolled */
-}
-
 .navbar .d-flex.gap-3 {
     align-items: center; /* Align menu items and button vertically */
 }
@@ -68,34 +64,22 @@
 }
 
 .hero-side-image-left {
-    left: -1%; /* Position relative to container */
-    bottom: 12%; /* Position at bottom */
-    width: 10rem;                      
-   height: 10rem; 
+    left: -15%; /* Position relative to container */
+    bottom: 3%; /* Position at bottom */
 }
 
 .hero-side-image-right {
-    right: -1%; /* Position relative to container */
-    top: 2%; /* Position at top */
-    width: 10rem;
-    height: 10rem;
-    color: var(--color-text-primary);
+    right: -15%; /* Position relative to container */
+    top: -5%; /* Position at top */
 }
 
-.hero-side-image-right svg {
-    fill: var(--color-text-primary);
-}
-
-.hero-side-image img {
+/* .hero-side-image img {
     height: 100%;
     width: auto;
     object-fit: cover;
-}
+} */
 
-.hero-icon-size {
-    font-size: 10rem; /* Much larger icon size */
-    color: var(--color-text-gold); /* Use gold color */
-}
+
 
 
 .main-content {
