@@ -17,7 +17,7 @@ body {
 /* --- Styles from index_2.html (Light Palette) --- */
 .color-bg-primary { background-color: #FFFFFF; }
 .color-bg-card { background: #FFFFFF; }
-.color-border-card { border: 1px solid #E5E7EB; }
+.color-border-card { border: 2px solid var(--bismart-gold); }
 .color-text-primary { color: var(--bismart-blue); }
 .color-text-secondary { color: #6c757d; }
 .color-text-white { color: #FFFFFF; }
@@ -115,10 +115,36 @@ body {
 
 .card-base {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .card-base:hover {
     transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Stili per la cornice speciale ispirati a lp-HeroCarousel-content */
+.card-special-frame {
+    position: relative; /* Necessario per posizionare il pseudo-elemento */
+    background: hsla(0,0%,100%,.05); /* Sfondo leggermente trasparente */
+    border: 1px solid var(--bismart-gold); /* Bordo dorato */
+    overflow: hidden; /* Nasconde l'overflow del pseudo-elemento */
+}
+
+.card-special-frame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2; /* Posiziona dietro il contenuto */
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(141.53% 114.68% at 87.46% 55.27%, var(--bismart-gold) 36.75%, rgba(14, 10, 162, 0) 100%); /* Gradiente dorato */
+    filter: blur(30px); /* Sfocatura per l'effetto glow */
+    border-radius: inherit; /* Eredita il border-radius dal genitore */
+    opacity: .6; /* Opacità regolata */
+    transform: scale(1.1); /* Leggermente più grande per un glow più ampio */
+    mix-blend-mode: screen; /* Modalità di fusione per un effetto luminoso */
 }
 
 .feature-icon {
@@ -192,4 +218,47 @@ body {
 .form-app-selection .list-group-item {
     background-color: transparent;
     border: none;
+}
+
+/* Stili per la cornice speciale delle card */
+.card-frame {
+    /* 1. Bordo esterno */
+    border: 1px solid rgba(255, 255, 255, 0.8); /* Bordo bianco */
+
+    /* 2. Spazio dove apparirà lo sfondo trasparente */
+    padding: 1rem; /* Cornice più stretta */
+
+    /* 3. Sfondo semi-trasparente (la "superficie") */
+    background: rgba(255, 255, 255, 0.1); /* Bianco con 10% opacità */
+
+    border-radius: 1.5rem; /* Corrisponde a rounded-5 */
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+/* 4. Effetto GLOW esterno */
+.card-frame::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 110%;
+    height: 110%;
+    pointer-events: none;
+    background: radial-gradient(
+        circle,
+        white, /* Glow bianco */
+        transparent 60%
+    );
+    filter: blur(30px);
+    opacity: 0.5;
+}
+
+.card-frame .card-base {
+    background: var(--bismart-blue); /* Sfondo del contenuto effettivo */
+    border-radius: 1rem; /* Angoli del figlio, leggermente inferiori al parente */
+    height: 100%;
 }

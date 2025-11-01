@@ -1,0 +1,52 @@
+body {
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.frame-parent {
+    /* 1. Bordo esterno */
+    border: 1px solid #00aaff;
+
+    /* 2. Spazio dove apparirà lo sfondo trasparente */
+    padding: 16px;
+
+    /* 3. Sfondo semi-trasparente (la "superficie") */
+    background: rgba(0, 170, 255, 0.1);
+
+    border-radius: 1rem;
+    position: relative;
+    z-index: 1;
+    width: 300px; /* Diamo una dimensione per la demo */
+}
+
+/* 4. Effetto GLOW esterno */
+.frame-parent::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 110%;
+    height: 110%;
+    pointer-events: none;
+    background: radial-gradient(
+        circle,
+        #00aaff,
+        transparent 60%
+    );
+    filter: blur(30px);
+    opacity: 0.7;
+}
+
+.frame-child {
+    background: #222; /* Sfondo del contenuto effettivo */
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.75rem; /* Angoli del figlio, leggermente inferiori al parente */
+}
