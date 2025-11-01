@@ -118,7 +118,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .card-base:hover {
-    transform: translateY(-8px) scale(1.03);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
@@ -228,7 +227,7 @@ body {
     /* 2. Spazio dove apparirà lo sfondo trasparente */
     padding: 1rem; /* Cornice più stretta */
 
-    /* 3. Sfondo semi-trasparente (la "superficie") */
+    /* 3. Sfondo semi-trasparente (la \"superficie\") */
     background: rgba(255, 255, 255, 0.1); /* Bianco con 10% opacità */
 
     border-radius: 1.5rem; /* Corrisponde a rounded-5 */
@@ -237,28 +236,35 @@ body {
     height: 100%;
 }
 
+
+
+.card-frame .card-base {
+    background: rgba(1, 3, 54, 0.6);
+    border-radius: 1rem;
+    height: 100%;
+}
+
 /* 4. Effetto GLOW esterno */
 .card-frame::before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    width: 110%;
-    height: 110%;
-    pointer-events: none;
-    background: radial-gradient(
-        circle,
-        white, /* Glow bianco */
-        transparent 60%
-    );
-    filter: blur(30px);
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        z-index: -1;
+        width: 110%;
+        height: 110%;
+        pointer-events: none;
+        background: radial-gradient(
+            circle at top left,
+            white,
+            transparent 60%
+        );    filter: blur(30px);
     opacity: 0.5;
+    transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.card-frame .card-base {
-    background: var(--bismart-blue); /* Sfondo del contenuto effettivo */
-    border-radius: 1rem; /* Angoli del figlio, leggermente inferiori al parente */
-    height: 100%;
+.card-frame:hover::before {
+    opacity: 1;
+    filter: blur(20px);
 }

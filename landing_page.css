@@ -85,15 +85,7 @@
     background-color: var(--color-bg-primary); /* Ensure it has a background */
 }
 
-/* Card hover effect */
-.card-base {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.card-base:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
 
 /* Custom button style for primary CTA */
 .btn-primary.color-bg-primary-btn {
