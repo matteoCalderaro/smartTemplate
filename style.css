@@ -209,6 +209,14 @@ body {
     backdrop-filter: blur(40px);
 }
 
+.lead-custom-size {
+    font-size: 1.3rem;
+}
+
+.card-text-description {
+    font-size: 1.1rem;
+}
+
 /* 4. Effetto GLOW esterno */
 .card-frame::before {
     content: "";
