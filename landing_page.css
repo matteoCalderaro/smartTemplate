@@ -179,3 +179,34 @@
 #founder-message {
     background-color: var(--bismart-blue);
 }
+
+.blockquote-styled {
+    position: relative;
+}
+
+.blockquote-styled .first-word,
+.blockquote-styled .last-word {
+    position: relative;
+}
+
+.blockquote-styled .first-word::before {
+    content: '“';
+    position: absolute;
+    left: -28px;
+    top: -9px;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--bismart-gold-light);
+    font-family: 'Georgia', serif;
+}
+
+.blockquote-styled .last-word::after {
+    content: '”';
+    position: absolute;
+    right: -29px;
+    bottom: -35px;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--bismart-gold-light);
+    font-family: 'Georgia', serif;
+}
