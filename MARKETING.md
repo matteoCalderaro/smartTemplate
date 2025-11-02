@@ -17,9 +17,3 @@ Possibili agganci creativi per la redazione del payoff:
 
 
 
-
-
-# Payoff versioni superate (NON LEGGERE)
-## Payoff 1
-> La Suite di Applicazioni Intelligenti per il Tuo Business
-> Un ecosistema di applicazioni che lavorano in sinergia per offrirti una visione a 360° e automatizzare i processi chiave della tua azienda!
