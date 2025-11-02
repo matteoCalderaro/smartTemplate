@@ -44,7 +44,7 @@ body {
     /* Colore finale (di hover) come background principale */
     background: white; 
     color: var(--bismart-blue);
-    border: 2px solid var(--bismart-gold);
+    border: 2px solid transparent;
     
     /* Durata della transizione per tutte le proprietà animabili (border, shadow, transform) */
     transition: all 0.6s ease;
